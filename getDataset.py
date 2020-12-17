@@ -11,40 +11,7 @@ def write_to_file(filename, base_path, img_paths, img_labels):
         for i in range(0, len(img_paths)):
             f.write('%s\t%s\n' % (os.path.join(base_path, img_paths[i]), img_labels[i]))
             
-'''
-if sys.version_info[0] >= 3:
-    from urllib.request import urlretrieve
-else:
-    #python 2
-    from urllib import urlretrieve
-
-data_path = 'data'
-
-def download_file(url, dest=None):
-    if not dest:
-        dest = os.path.join(data_path, url.split('/')[-1])
-    urlretrieve(url, dest)    
-    
-    # Download the Oxford102 dataset into the current directory
-    if not os.path.exists(data_path):
-        os.mkdir(data_path)
-    
-    flowers_archive_path = os.path.join(data_path, '102flowers.tgz')
-    if not os.path.isfile(flowers_archive_path):
-        print ('Downloading images...')
-        download_file('http://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz')
-    tarfile.open(flowers_archive_path).extractall(path=data_path)
-    
-    image_labels_path = os.path.join(data_path, 'imagelabels.mat')
-    if not os.path.isfile(image_labels_path):
-        print("Downloading image labels...")
-        download_file('http://www.robots.ox.ac.uk/~vgg/data/flowers/102/imagelabels.mat')
-    
-    setid_path = os.path.join(data_path, 'setid.mat')
-    if not os.path.isfile(setid_path):
-        print("Downloading train/test/valid splits...")
-        download_file('http://www.robots.ox.ac.uk/~vgg/data/flowers/102/setid.mat')
-  '''             
+             
 def move_files(data_dir, dir_name, labels):
     
     cur_dir_path = os.path.join(data_dir, dir_name)
