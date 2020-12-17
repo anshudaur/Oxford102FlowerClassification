@@ -15,9 +15,7 @@ def write_to_file(filename, base_path, img_paths, img_labels):
 if sys.version_info[0] >= 3:
     from urllib.request import urlretrieve
 else:
-    # Not Python 3 - today, it is most likely to be Python 2
-    # But note that this might need an update when Python 4
-    # might be around one day
+    #python 2
     from urllib import urlretrieve
 
 data_path = 'data'
